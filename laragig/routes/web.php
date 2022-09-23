@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use Illuminate\Http\Request;
 use Termwind\Components\Raw;
 use Illuminate\Support\Facades\Route;
@@ -16,22 +17,10 @@ use App\Models\Listing;
 */
 
 //All Listings
-
-Route::get('/', function () {
-    return view('listings', [
-        'heading' => 'Latest Listings',
-        'listings' => Listing::all()
-    ]);
-});
+Route::get('/', [ListingController::class, 'index']);
 
 // Single Listing
-
-Route::get('/listings/{listing}', function(Listing $listing){
-
-    return view('listing', [
-        'listing' => $listing
-    ]);
-});
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 
 // Route::get('/hello', function () {
