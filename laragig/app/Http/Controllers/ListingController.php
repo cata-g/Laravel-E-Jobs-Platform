@@ -42,11 +42,48 @@ class ListingController extends Controller
             'description' => 'required'
         ]);
 
+        if($request->hasFile('logo')){
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
         Listing::create($formFields);
 
         
 
         return redirect('/')->with('message', 'Listing Created Successfully');
 
+    }
+
+    //edit listing
+    public function edit(Listing $listing){
+        return view('listings.edit', ['listing' => $listing]);
+    }
+
+    public function update(Request $request, Listing $listing){
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => 'required',
+            'location' => 'required',
+            'website' => 'required',
+            'tags' => 'required',
+            'email' => ['required', 'email'],
+            'description' => 'required'
+        ]);
+
+        if($request->hasFile('logo')){
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        $listing->update($formFields);
+
+        
+
+        return back()->with('message', 'Listing Updated Successfully');
+    }
+
+    //Delete listing
+    public function destroy(Listing $listing){
+        $listing->delete();
+        return redirect('/')->with('message', 'Listing Deleted Successfully');
     }
 }
