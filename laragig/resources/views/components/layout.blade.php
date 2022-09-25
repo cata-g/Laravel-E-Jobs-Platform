@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color: #282566">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,6 +12,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <link rel="stylesheet" href="laragig\resources\css\app.css" />
         <script src="//unpkg.com/alpinejs" defer></script>
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
@@ -27,43 +28,43 @@
         </script>
         <title>LaraGigs | Find Laravel Jobs & Projects</title>
     </head>
-    <body class="mb-48">
-        <nav class="flex justify-between items-center mb-4">
+    <body class="mb-12">
+        <nav class="flex justify-between items-center" style="background-color: #17153a">
             <a href="/"
-                ><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo"
+                ><img class="w-24 h-24 ml-5" src="{{asset('images/logo-site.png')}}" alt="" class="logo"
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
 
                 @auth
                 <li>
-                   <span class="font-bold uppercase">
+                   <span class="font-bold uppercase mr-5" style="color: white">
                     Welcome {{auth()->user()->name}}
                    </span>
                 </li>
                 <li>
-                    <a href="/listings/manage" class="hover:text-laravel"
-                        ><i class="fa-solid fa-gear"></i>
+                    <a href="/listings/manage" class="hover:text-laravel" style="color: white"
+                        ><i class="fa-solid fa-gear" style="color: white"></i>
                         Manage Listings</a
                     >
                 </li>
                 <li>
                     <form class="inline" method="post" action="/logout">
                         @csrf
-                        <button type="submit">
-                            <i class="fa-solid fa-door-closed"></i>Logout
+                        <button type="submit" style="color: white">
+                            <i class="fa-solid fa-door-closed" style="color: white"></i> Logout
                         </button>
                     </form>
                 </li>
 
                 @else
                 <li>
-                    <a href="/register" class="hover:text-laravel"
-                        ><i class="fa-solid fa-user-plus"></i> Register</a
+                    <a href="/register" class="hover:text-laravel" style="color: white"
+                        ><i class="fa-solid fa-user-plus" style="color: white"></i> Register</a
                     >
                 </li>
                 <li>
-                    <a href="/login" class="hover:text-laravel"
-                        ><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <a href="/login" class="hover:text-laravel" style="color: white"
+                        ><i class="fa-solid fa-arrow-right-to-bracket" style="color: white"></i>
                         Login</a
                     >
                 </li>
@@ -79,13 +80,14 @@
 
     <footer
         class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold
-        bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center"
+        bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center" style="background-color: #17153A"
     >
         <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
 
         <a
             href="/listings/create"
             class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"
+            style="background-color: #A7A3F7; color: #17153A"
             >Post Job</a
         >
     </footer>
