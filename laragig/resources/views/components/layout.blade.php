@@ -28,7 +28,7 @@
         </script>
         <title>LaraGigs | Find Laravel Jobs & Projects</title>
     </head>
-    <body class="mb-12">
+    <body class="mb-20">
         <nav class="flex justify-between items-center" style="background-color: #17153a">
             <a href="/"
                 ><img class="w-24 h-24 ml-5" src="{{asset('images/logo-site.png')}}" alt="" class="logo"
