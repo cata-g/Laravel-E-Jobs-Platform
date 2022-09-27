@@ -15,7 +15,7 @@
         <a class="mr-2 my-1 uppercase tracking-wider px-2 text-indigo-600
         border-indigo-600 hover:bg-indigo-600 hover:text-white border
         text-sm font-semibold rounded py-1 transition
-        transform duration-500 cursor-pointer" href="/listings/{{$listing->id}}">Apply</a>
+        transform duration-500 cursor-pointer" href="/listings/applyTo/{{$listing->id}}">Apply</a>
         @endif
     </div>
 

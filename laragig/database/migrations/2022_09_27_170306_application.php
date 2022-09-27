@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('Applications', function (Blueprint $table) {
             $table->id();
             $table->foreignId('listing_id')->constrained()->onDelete('cascade');
+            $table->string('user_id')->constrained()->onDelete('cascade');
             $table->longText('priorWork');
             $table->string('portofolioLink');
             $table->integer('desiredSalary');

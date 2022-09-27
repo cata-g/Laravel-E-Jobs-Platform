@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ApplicationController;
 use Illuminate\Http\Request;
 use Termwind\Components\Raw;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,9 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->mid
 //Manage Listings
 Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
+// Show Apply Form
+Route::get('/listings/applyTo/{listing}', [ApplicationController::class, 'create'])->middleware('auth');
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
@@ -55,6 +59,7 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Log In
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
 
 
 
