@@ -14,12 +14,14 @@
                 <p class="text-2xl text-gray-200 font-bold my-4">
                     Hire or get hired
                 </p>
+                @guest
                 <div>
                     <a
-                        href="register.html"
-                        class="inline-block border-2 border-white text-white py-2 px-4 rounded-xl uppercase mt-2 hover:text-black hover:border-black"
+                        href="/register"
+                        class="inline-block border-2 border-white text-white py-2 px-4 rounded-xl uppercase mt-2 hover:text-violet-400 hover:border-violet-400"
                         >Sign Up to List a Gig</a
                     >
                 </div>
+                @endguest
             </div>
         </section>

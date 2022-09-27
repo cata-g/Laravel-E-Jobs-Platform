@@ -4,16 +4,16 @@
       <div class="flex justify-between items-center w-full">
         <div class="text-lg font-semibold text-bookmark-blue flex space-x-3 items-center mb-2">
             <img class="w-12 h-12 rounded" src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png') }}" />
-          <span>{{$listing->title}}</span>
+          <span><a href="/listings/{{$listing->id}}">{{$listing->title}}</a></span>
         </div>
       </div>
     </div>
 
     <div class="flex justify-between">
         <x-listing-tag :tagsCSV="$listing->tags"/>
-        <a class="mr-2 my-1 uppercase tracking-wider px-2 text-indigo-600 
-        border-indigo-600 hover:bg-indigo-600 hover:text-white border 
-        text-sm font-semibold rounded py-1 transition 
+        <a class="mr-2 my-1 uppercase tracking-wider px-2 text-indigo-600
+        border-indigo-600 hover:bg-indigo-600 hover:text-white border
+        text-sm font-semibold rounded py-1 transition
         transform duration-500 cursor-pointer" href="/listings/{{$listing->id}}">Apply</a>
 
     </div>

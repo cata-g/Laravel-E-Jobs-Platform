@@ -1,10 +1,10 @@
 <x-layout>
     <x-card class="max-w-lg mx-auto mt-24">
         <header class="text-center">
-            <h2 class="text-2xl font-bold uppercase mb-1">
+            <h2 class="text-2xl font-bold uppercase mb-1 text-indigo-900">
                 Edit Gig
             </h2>
-            <p class="mb-4">Edit: {{$listing->title}}</p>
+            <p class="mb-4 text-indigo-700 font-semibold">Edit: {{$listing->title}}</p>
         </header>
 
         <form action="/listings/{{$listing->id}}" method="post" enctype="multipart/form-data">
@@ -13,7 +13,7 @@
             <div class="mb-6">
                 <label
                     for="company"
-                    class="inline-block text-lg mb-2"
+                    class="inline-block text-lg mb-2 text-indigo-700 font-semibold"
                     >Company Name</label
                 >
                 <input
@@ -29,7 +29,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="title" class="inline-block text-lg mb-2"
+                <label for="title" class="inline-block text-lg mb-2 text-indigo-700 font-semibold"
                     >Job Title</label
                 >
                 <input
@@ -48,12 +48,12 @@
             <div class="mb-6">
                 <label
                     for="location"
-                    class="inline-block text-lg mb-2"
+                    class="inline-block text-lg mb-2 text-indigo-700 font-semibold"
                     >Job Location</label
                 >
                 <input
                     type="text"
-                    class="border border-gray-200 rounded p-2 w-full"
+                    class="border border-gray-200 rounded p-2 w-full "
                     name="location"
                     placeholder="Example: Remote, Boston MA, etc"
                     value="{{$listing->location}}"
@@ -65,7 +65,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="email" class="inline-block text-lg mb-2"
+                <label for="email" class="inline-block text-lg mb-2 text-indigo-700 font-semibold"
                     >Contact Email</label
                 >
                 <input
@@ -83,7 +83,7 @@
             <div class="mb-6">
                 <label
                     for="website"
-                    class="inline-block text-lg mb-2"
+                    class="inline-block text-lg mb-2 text-indigo-700 font-semibold"
                 >
                     Website/Application URL
                 </label>
@@ -99,7 +99,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="tags" class="inline-block text-lg mb-2">
+                <label for="tags" class="inline-block text-lg mb-2 text-indigo-700 font-semibold">
                     Tags (Comma Separated)
                 </label>
                 <input
@@ -115,7 +115,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="logo" class="inline-block text-lg mb-2">
+                <label for="logo" class="inline-block text-lg mb-2 text-indigo-700 font-semibold">
                     Company Logo
                 </label>
                 <input
@@ -137,7 +137,7 @@
             <div class="mb-6">
                 <label
                     for="description"
-                    class="inline-block text-lg mb-2"
+                    class="inline-block text-lg mb-2 text-indigo-700 font-semibold"
                 >
                     Job Description
                 </label>
@@ -156,12 +156,12 @@
 
             <div class="mb-6">
                 <button
-                    class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
+                    class="bg-indigo-900 text-white rounded py-2 px-4 hover:bg-violet-400"
                 >
                     Update Gig
                 </button>
 
-                <a href="/" class="text-black ml-4"> Back </a>
+                <a href="/" class="text-indigo-400 ml-4"> Back </a>
             </div>
         </form>
     </x-card>

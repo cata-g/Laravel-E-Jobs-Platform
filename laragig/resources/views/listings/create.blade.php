@@ -1,10 +1,10 @@
 <x-layout>
     <x-card class="max-w-lg mx-auto mt-24">
         <header class="text-center">
-            <h2 class="text-2xl font-bold uppercase mb-1">
+            <h2 class="text-2xl font-bold uppercase mb-1 text-indigo-900">
                 Create a Gig
             </h2>
-            <p class="mb-4">Post a gig to find a developer</p>
+            <p class="mb-4 text-indigo-700 font-semibold">Post a gig to find a developer</p>
         </header>
 
         <form action="/listings" method="post" enctype="multipart/form-data">
@@ -12,7 +12,7 @@
             <div class="mb-6">
                 <label
                     for="company"
-                    class="inline-block text-lg mb-2"
+                    class="inline-block text-lg mb-2 font-semibold text-indigo-700"
                     >Company Name</label
                 >
                 <input
@@ -28,7 +28,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="title" class="inline-block text-lg mb-2"
+                <label for="title" class="inline-block text-lg mb-2 font-semibold text-indigo-700"
                     >Job Title</label
                 >
                 <input
@@ -43,13 +43,25 @@
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
             </div>
+            <div class="mb-6 flex justify-between">
+                <label class="inline-block text-lg mb-2 font-semibold text-indigo-700" for="job-type">
+                    Job Type
+                </label>
+                <select class="inline-block text-lg mb-2 font-semibold text-indigo-700" id="job-type" name="job-type">
+                    <option value="full-time" selected>Full-time</option>
+                    <option value="part-time">Part-time</option>
+                    <option value="freelance">Freelance</option>
+                    <option value="contract">Contract</option>
+                </select>
+            </div>
+
+            
 
             <div class="mb-6">
                 <label
                     for="location"
-                    class="inline-block text-lg mb-2"
-                    >Job Location</label
-                >
+                    class="inline-block text-lg mb-2 font-semibold text-indigo-700"
+                    >Job Location</label>
                 <input
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
@@ -64,7 +76,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="email" class="inline-block text-lg mb-2"
+                <label for="email" class="inline-block text-lg mb-2 font-semibold text-indigo-700""
                     >Contact Email</label
                 >
                 <input
@@ -82,13 +94,13 @@
             <div class="mb-6">
                 <label
                     for="website"
-                    class="inline-block text-lg mb-2"
+                    class="inline-block text-lg mb-2 font-semibold text-indigo-700""
                 >
                     Website/Application URL
                 </label>
                 <input
                     type="text"
-                    class="border border-gray-200 rounded p-2 w-full"
+                    class="border border-gray-200 rounded p-2 w-full "
                     name="website"
                     value="{{old('website')}}"
                 />
@@ -98,7 +110,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="tags" class="inline-block text-lg mb-2">
+                <label for="tags" class="inline-block text-lg mb-2 font-semibold text-indigo-700"">
                     Tags (Comma Separated)
                 </label>
                 <input
@@ -114,7 +126,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="logo" class="inline-block text-lg mb-2">
+                <label for="logo" class="inline-block text-lg mb-2 font-semibold text-indigo-700"">
                     Company Logo
                 </label>
                 <input
@@ -130,17 +142,16 @@
             <div class="mb-6">
                 <label
                     for="description"
-                    class="inline-block text-lg mb-2"
+                    class="inline-block text-lg mb-2 font-semibold text-indigo-700""
                 >
                     Job Description
                 </label>
                 <textarea
-                    class="border border-gray-200 rounded p-2 w-full"
+                    class="border border-gray-200 rounded p-2 w-full text-black"
                     name="description"
                     rows="10"
                     placeholder="Include tasks, requirements, salary, etc"
-                >
-            {{old('description')}}</textarea>
+                >{{old('description')}}</textarea>
 
                 @error('description')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -149,7 +160,7 @@
 
             <div class="mb-6">
                 <button
-                    class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
+                    class="text-white rounded py-2 px-4 bg-indigo-900 hover:bg-violet-400"
                 >
                     Create Gig
                 </button>

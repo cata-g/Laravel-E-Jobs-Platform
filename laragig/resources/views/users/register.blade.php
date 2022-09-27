@@ -1,16 +1,16 @@
 <x-layout>
     <x-card class="p-10 max-w-lg mx-auto mt-24">
         <header class="text-center">
-            <h2 class="text-2xl font-bold uppercase mb-1">
+            <h2 class="text-2xl font-bold uppercase mb-1 text-indigo-900">
                 Register
             </h2>
-            <p class="mb-4">Create an account to post gigs</p>
+            <p class="mb-4 text-indigo-800 font-semibold">Create an account to post gigs</p>
         </header>
 
         <form action="/users" method="post">
             @csrf
             <div class="mb-6">
-                <label for="name" class="inline-block text-lg mb-2">
+                <label for="name" class="inline-block text-lg mb-2 text-indigo-800 font-semibold">
                     Name
                 </label>
                 <input
@@ -26,7 +26,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="email" class="inline-block text-lg mb-2"
+                <label for="email" class="inline-block text-lg mb-2 text-indigo-800 font-semibold"
                     >Email</label
                 >
                 <input
@@ -43,7 +43,7 @@
             <div class="mb-6">
                 <label
                     for="password"
-                    class="inline-block text-lg mb-2"
+                    class="inline-block text-lg mb-2 text-indigo-800 font-semibold"
                 >
                     Password
                 </label>
@@ -61,7 +61,7 @@
             <div class="mb-6">
                 <label
                     for="password_confirmation"
-                    class="inline-block text-lg mb-2"
+                    class="inline-block text-lg mb-2 text-indigo-800 font-semibold"
                 >
                     Confirm Password
                 </label>
@@ -79,16 +79,16 @@
             <div class="mb-6">
                 <button
                     type="submit"
-                    class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
+                    class="text-white rounded py-2 px-4 bg-indigo-900 hover:bg-violet-400"
                 >
                     Sign Up
                 </button>
             </div>
 
             <div class="mt-8">
-                <p>
+                <p class="text-indigo-800 font-semibold">
                     Already have an account?
-                    <a href="/login" class="text-laravel"
+                    <a href="/login" class="text-indigo-900 font-bold"
                         >Login</a
                     >
                 </p>

@@ -1,17 +1,17 @@
 <x-layout>
     <x-card class="p-10 max-w-lg mx-auto mt-24">
         <header class="text-center">
-            <h2 class="text-2xl font-bold uppercase mb-1">
+            <h2 class="text-2xl font-bold uppercase mb-1 text-indigo-900">
                 Login
             </h2>
-            <p class="mb-4">Log into your account</p>
+            <p class="mb-4 text-indigo-800 font-semibold">Log into your account</p>
         </header>
 
         <form action="/users/authenticate" method="post">
             @csrf
         
             <div class="mb-6">
-                <label for="email" class="inline-block text-lg mb-2"
+                <label for="email" class="inline-block text-lg mb-2 text-indigo-800 font-semibold"
                     >Email</label
                 >
                 <input
@@ -28,7 +28,7 @@
             <div class="mb-6">
                 <label
                     for="password"
-                    class="inline-block text-lg mb-2"
+                    class="inline-block text-lg mb-2 text-indigo-800 font-semibold"
                 >
                     Password
                 </label>
@@ -46,16 +46,17 @@
             <div class="mb-6">
                 <button
                     type="submit"
-                    class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
+                    class="text-white rounded py-2 px-4 bg-indigo-900 hover:bg-violet-400"
+
                 >
                     Sign In
                 </button>
             </div>
 
             <div class="mt-8">
-                <p>
+                <p class="text-indigo-800 font-semibold">
                     Don't have an account?
-                    <a href="/register" class="text-laravel"
+                    <a href="/register" class="text-indigo-900 font-bold"
                         >Register</a
                     >
                 </p>

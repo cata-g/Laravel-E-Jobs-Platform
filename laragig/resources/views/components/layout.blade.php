@@ -26,9 +26,9 @@
                 },
             };
         </script>
-        <title>LaraGigs | Find Laravel Jobs & Projects</title>
+        <title>PGR. GIGS | Find Programming Jobs & Projects</title>
     </head>
-    <body class="mb-20">
+    <body class="mb-32">
         <nav class="flex justify-between items-center" style="background-color: #17153a">
             <a href="/"
                 ><img class="w-24 h-24 ml-5" src="{{asset('images/logo-site.png')}}" alt="" class="logo"
@@ -86,8 +86,7 @@
 
         <a
             href="/listings/create"
-            class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"
-            style="background-color: #A7A3F7; color: #17153A"
+            class="absolute top-1/3 right-10 bg-black text-white py-2 px-5 bg-indigo-800 hover:bg-violet-300"
             >Post Job</a
         >
     </footer>
