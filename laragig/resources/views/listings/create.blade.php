@@ -43,19 +43,22 @@
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
             </div>
-            <div class="mb-6 flex justify-between">
-                <label class="inline-block text-lg mb-2 font-semibold text-indigo-700" for="job-type">
+            <div class="mb-6">
+                <div class="flex justify-between">
+                <label class="inline-block text-lg mb-2 font-semibold text-indigo-700" for="type">
                     Job Type
                 </label>
-                <select class="inline-block text-lg mb-2 font-semibold text-indigo-700" id="job-type" name="job-type">
+                <select class="inline-block text-lg mb-2 font-semibold text-indigo-700" id="type" name="type">
                     <option value="full-time" selected>Full-time</option>
                     <option value="part-time">Part-time</option>
                     <option value="freelance">Freelance</option>
                     <option value="contract">Contract</option>
                 </select>
             </div>
-
-            
+            @error('type')
+                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+        </div>
 
             <div class="mb-6">
                 <label
@@ -76,7 +79,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="email" class="inline-block text-lg mb-2 font-semibold text-indigo-700""
+                <label for="email" class="inline-block text-lg mb-2 font-semibold text-indigo-700"
                     >Contact Email</label
                 >
                 <input
@@ -110,7 +113,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="tags" class="inline-block text-lg mb-2 font-semibold text-indigo-700"">
+                <label for="tags" class="inline-block text-lg mb-2 font-semibold text-indigo-700">
                     Tags (Comma Separated)
                 </label>
                 <input
@@ -126,7 +129,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="logo" class="inline-block text-lg mb-2 font-semibold text-indigo-700"">
+                <label for="logo" class="inline-block text-lg mb-2 font-semibold text-indigo-700">
                     Company Logo
                 </label>
                 <input
@@ -140,9 +143,20 @@
             </div>
 
             <div class="mb-6">
+            <div x-data="{ price: 5000 }" class="w-full">
+                <label for="price" class="inline-block text-lg mb-2 font-semibold text-indigo-700" x-text="`Salary $` + price"></label>
+                <input type="range" min="1000" name="price" max="10000" x-model="price" name='salary'
+                  class="w-full h-2 bg-blue-100 appearance-none" />
+              </div>
+              @error('salary')
+                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+
+            </div>
+            <div class="mb-6">
                 <label
                     for="description"
-                    class="inline-block text-lg mb-2 font-semibold text-indigo-700""
+                    class="inline-block text-lg mb-2 font-semibold text-indigo-700"
                 >
                     Job Description
                 </label>
@@ -150,7 +164,7 @@
                     class="border border-gray-200 rounded p-2 w-full text-black"
                     name="description"
                     rows="10"
-                    placeholder="Include tasks, requirements, salary, etc"
+                    placeholder="Include tasks, requirements etc"
                 >{{old('description')}}</textarea>
 
                 @error('description')

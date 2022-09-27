@@ -23,7 +23,9 @@ class ListingFactory extends Factory
             'email' => fake()->companyEmail(),
             'website' => fake()->url(),
             'location' => fake()->city(),
-            'description' => fake()->paragraph(5)
+            'description' => fake()->paragraph(5),
+            'salary' => 10000,
+            'type' => 'freelancer'
         ];
     }
 }

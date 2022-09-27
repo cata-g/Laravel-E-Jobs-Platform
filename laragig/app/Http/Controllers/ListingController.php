@@ -35,10 +35,12 @@ class ListingController extends Controller
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required', Rule::unique('listings', 'company')],
+            'type' => 'required',
             'location' => 'required',
             'website' => 'required',
             'tags' => 'required',
             'email' => ['required', 'email'],
+            'salary' => 'required',
             'description' => 'required'
         ]);
 
@@ -69,11 +71,13 @@ class ListingController extends Controller
 
         $formFields = $request->validate([
             'title' => 'required',
+            'type' => 'required',
             'company' => 'required',
             'location' => 'required',
             'website' => 'required',
             'tags' => 'required',
             'email' => ['required', 'email'],
+            'salary' => 'required',
             'description' => 'required'
         ]);
 
