@@ -38,10 +38,18 @@
             />
 
             <h3 class="text-2xl mb-2 text-white font-bold">{{$listing->title}}</h3>
-            <div class="text-xl font-semibold text-zinc-300 mb-4">{{$listing->company}}</div>
+            <div class="text-xl font-semibold text-zinc-300 mb-4"><i class="fa-solid fa-building"></i> {{$listing->company}}</div>
             <x-listing-tag :tagsCSV="$listing->tags"/>
-            <div class="text-lg text-zinc-300 my-4 font-semibold">
-                <i class="fa-solid fa-location-dot"></i> {{$listing->location}}
+            <div class="flex space-x-4">
+                <div class="text-lg text-zinc-300 my-4 font-semibold">
+                    <i class="fa-solid fa-location-dot"></i> {{$listing->location}}
+                </div>
+                <div class="text-lg text-zinc-300 my-4 font-semibold">
+                    <i class="fa-solid fa-money-bill"></i> ${{$listing->salary}}
+                </div>
+                <div class="text-lg text-zinc-300 my-4 font-semibold">
+                    <i class="fa-solid fa-keyboard"></i> {{$listing->type}}
+                </div>
             </div>
             <div class="border border-violet-400 w-full mb-6"></div>
                 <a

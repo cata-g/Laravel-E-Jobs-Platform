@@ -11,12 +11,14 @@
 
     <div class="flex justify-between">
         <x-listing-tag :tagsCSV="$listing->tags"/>
+          @if(auth()->id() != $listing->user_id)
         <a class="mr-2 my-1 uppercase tracking-wider px-2 text-indigo-600
         border-indigo-600 hover:bg-indigo-600 hover:text-white border
         text-sm font-semibold rounded py-1 transition
         transform duration-500 cursor-pointer" href="/listings/{{$listing->id}}">Apply</a>
-
+        @endif
     </div>
+
     <div class="flex space-x-10">
       <div class="text-md font-semibold flex space-x-1 items-center text-gray-500 ml-2 mt-2 mb-1">
         <i class="fa-solid fa-building"></i><span>{{$listing->company}}</span>
