@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('listing_id')->constrained()->onDelete('cascade');
             $table->string('user_id')->constrained()->onDelete('cascade');
             $table->longText('priorWork');
-            $table->string('portofolioLink');
+            $table->string('portofolioWork');
             $table->integer('desiredSalary');
             $table->timestamps();
         });

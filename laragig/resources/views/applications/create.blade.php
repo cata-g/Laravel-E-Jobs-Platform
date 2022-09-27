@@ -1,8 +1,5 @@
 <x-layout>
 
-    {{-- PriorWork
-    Portofolio Link
-    Desired Salary --}}
     <x-card class="max-w-lg mx-auto mt-24">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1 text-indigo-900">
@@ -11,7 +8,7 @@
             <p class="mb-4 text-indigo-700 font-semibold">Apply to: {{$listing->title}}</p>
         </header>
 
-        <form action="/" method="post" enctype="multipart/form-data">
+        <form action="/listings/submitApplyTo/{{$listing->id}}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-6">
@@ -35,19 +32,19 @@
 
             <div class="mb-6">
                 <label
-                    for="portofolioLink"
+                    for="portofolioWork"
                     class="inline-block text-lg mb-2 font-semibold text-indigo-700"
                     >Portofolio Link</label
                 >
                 <input
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
-                    name="portofolioLink"
+                    name="portofolioWork"
                     placeholder="Resume, LinkedIn, etc"
-                    value="{{old('desiredSalary')}}"
+                    value="{{old('portofolioWork')}}"
                 />
 
-                @error('portofolioLink')
+                @error('portofolioWork')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>

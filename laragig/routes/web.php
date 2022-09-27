@@ -41,6 +41,8 @@ Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware
 // Show Apply Form
 Route::get('/listings/applyTo/{listing}', [ApplicationController::class, 'create'])->middleware('auth');
 
+Route::post('/listings/submitApplyTo/{listing}', [ApplicationController::class, 'store'])->middleware('auth');
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 

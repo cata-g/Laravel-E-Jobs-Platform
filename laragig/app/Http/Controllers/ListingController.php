@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\Listing;
+use Illuminate\Support\Facades\DB;
 
 class ListingController extends Controller
 {
@@ -19,8 +20,24 @@ class ListingController extends Controller
 
     //show single listing
     public function show(Listing $listing){
+
+        $applications = $listing->application()->get();
+
+        $users = array();
+        foreach($applications as $app){
+            $data = array(
+                "name" => DB::table('users')->where('id', $app->user_id)->first()->name,
+                "email"=> DB::table('users')->where('id', $app->user_id)->first()->email,
+            );
+            array_push($users, $data);
+        }
+
+        dd($users);
+
         return view('listings.show', [
-            'listing' => $listing
+            'listing' => $listing,
+            'applications' => $applications,
+            'users' => $users
         ]);
     }
 
